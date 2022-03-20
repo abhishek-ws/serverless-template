@@ -1,5 +1,4 @@
-service:
-  name: ${env:NAME}
+service: ${env:NAME}
 plugins:
   - serverless-dotenv-plugin
   - serverless-webpack
