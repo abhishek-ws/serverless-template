@@ -1,10 +1,11 @@
 import { apiSuccess, apiFailure } from '@utils';
 import { getOrganizations } from '@services/github';
 
-exports.handler = async (event, _context, callback) => {
+export const handler = async (event, _context, callback) => {
 	console.log(JSON.stringify(event));
 	try {
-		const response = await getOrganizations();
+		const { orgName } = event.queryStringParameters || '';
+		const response = await getOrganizations(orgName);
 		return apiSuccess(callback, response);
 	} catch (error) {
 		console.error(error);
