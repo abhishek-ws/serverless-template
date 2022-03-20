@@ -15,6 +15,9 @@ provider:
 package:
   individually: true
 custom:
+  serverless-offline:
+    apiKey: '0123456789'
+    httpPort: 3000
   urlPrefix: 'sls'
   webpack:
     includeModules: true
